@@ -18,12 +18,8 @@ namespace Schiffchen6
     public class Vector
     {
         public Point Start = new Point();
-        public Point End = new Point();
-        public double SX { get; set; }
-        public double EX { get; set; }
-        public double SY { get; set; }
-        public double EY { get; set; }
-
+        public Point End = new Point();      
+        
         Line line;
         public Vector(Canvas Sea)
         {
@@ -149,7 +145,14 @@ namespace Schiffchen6
 
             return (Start.X, End.X, Start.Y, End.Y);
         }
+        double GetLength(Point Start, Point End)
+        {
+            System.Windows.Vector Vec123 = new System.Windows.Vector();
+            Vec123.X = End.X - Start.X;
+            Vec123.Y = End.Y - Start.Y;
 
+            return Vec123.Length;
+        }
 
 
 

@@ -14,6 +14,8 @@ namespace Schiffchen6
     class Ship
     {
         //Postion
+
+       
         //double x;
         //double y;
 
@@ -24,15 +26,19 @@ namespace Schiffchen6
         
         public Ship(Canvas Sea)
         {
+            Vector vector = new Vector(Sea);
             rect = new Rectangle
             {
                 Fill = Brushes.Red,
                 Width = 10,
                 Height = 10
             };
-    
+            Canvas.SetLeft(rect, vector.Start.X);
+            Canvas.SetTop(rect, vector.Start.Y);
             Sea.Children.Add(rect);
         }
 
+
+       
     }
 }

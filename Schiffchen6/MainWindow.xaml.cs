@@ -23,17 +23,12 @@ namespace Schiffchen6
         public MainWindow()
         {
             InitializeComponent();
-            test();
+            
         }
 
-
-        public void test()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Ship ship = new Ship(Sea);
-            Vector vector = new Vector(Sea);
         }
-       
-
-        
     }
 } 

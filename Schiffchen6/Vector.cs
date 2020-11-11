@@ -44,7 +44,7 @@ namespace Schiffchen6
 
 
 
-
+            Sea.Children.Add(line);
         }
 
         public (double, double, double, double) pickASite(Canvas Sea)
@@ -56,12 +56,12 @@ namespace Schiffchen6
             int Finishsite;
             Startsite = rnd.Next(1, 5);
             Finishsite = rnd.Next(1, 4);
-            switch (Startsite)              //Anfang
-            {
+            switch (Startsite)              //Anfang vom Vektor
+            {                                                                                           // immer im Uhrzeigersinn
                 case 1:                                               //top
                     Start.Y = 0;
                     Start.X = rnd.Next(0, SeaWidth);
-                    switch (Finishsite)     //Ende                   
+                    switch (Finishsite)     //Ende vom Vektor        
                     {
 
                         case 1:
@@ -69,12 +69,12 @@ namespace Schiffchen6
                             End.Y = rnd.Next(0, SeaHeight); // alles was fehlt am ende hinzufügen ?!
                             break;
                         case 2:
-                            End.X =
-                            End.Y =
+                            End.X = rnd.Next(0, SeaWidth);
+                            End.Y = SeaHeight;
                             break;
                         case 3:
-                            End.X =
-                            End.Y =
+                            End.X = 0;
+                            End.Y = rnd.Next(0, SeaHeight);
                             break;
                     }
                     break;
@@ -85,16 +85,16 @@ namespace Schiffchen6
                     {
 
                         case 1:
-                            End.X =
-                            End.Y =
+                            End.X = rnd.Next(0, SeaWidth);
+                            End.Y = SeaHeight;
                             break;
                         case 2:
-                            End.X =
-                            End.Y =
+                            End.X = 0;
+                            End.Y = rnd.Next(0, SeaHeight);
                             break;
                         case 3:
-                            End.X =
-                            End.Y =
+                            End.X = rnd.Next(0, SeaWidth);
+                            End.Y = 0;
                             break;
                     }
 
@@ -106,16 +106,16 @@ namespace Schiffchen6
                     {
 
                         case 1:
-                            End.X =
-                            End.Y =
+                            End.X = 0;
+                            End.Y = rnd.Next(0, SeaHeight);
                             break;
                         case 2:
-                            End.X =
-                            End.Y =
+                            End.X = rnd.Next(0, SeaWidth);
+                            End.Y = 0;
                             break;
                         case 3:
-                            End.X =
-                            End.Y =
+                            End.X = SeaWidth;
+                            End.Y = rnd.Next(0, SeaHeight);
                             break;
                     }
 
@@ -127,13 +127,16 @@ namespace Schiffchen6
                     {
 
                         case 1:
-
+                            End.X = rnd.Next(0, SeaWidth);
+                            End.Y = 0;
                             break;
                         case 2:
-
+                            End.X = SeaWidth;
+                            End.Y = rnd.Next(0, SeaHeight);
                             break;
                         case 3:
-
+                            End.X = rnd.Next(0, SeaWidth);
+                            End.Y = SeaHeight;
                             break;
                     }
                     break;

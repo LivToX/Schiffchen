@@ -14,11 +14,11 @@ namespace Schiffchen6
     class Ship
     {
         //Postion
-        double x;
-        double y;
+        //double x;
+        //double y;
 
-        double speed;
-        double direction;
+       // double speed;
+        //double direction;
 
         Rectangle rect;
         

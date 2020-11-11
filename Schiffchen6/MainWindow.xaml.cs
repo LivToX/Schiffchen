@@ -23,12 +23,15 @@ namespace Schiffchen6
         public MainWindow()
         {
             InitializeComponent();
-            Ship ship = new Ship(Sea);
-            Vector vector = new Vector(Sea);
+            test();
         }
 
 
-
+        public void test()
+        {
+            Ship ship = new Ship(Sea);
+            Vector vector = new Vector(Sea);
+        }
        
 
         

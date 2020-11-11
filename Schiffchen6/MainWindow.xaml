@@ -11,6 +11,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Canvas Name="Sea" Margin="30" Width="430" Height="360" Background="#FF004676"/>
-
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,5,0,0" Click="Button_Click"/>
     </Grid>
 </Window>

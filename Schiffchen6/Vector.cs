@@ -67,7 +67,7 @@ namespace Schiffchen6
                         case 2:
                             End.X = rnd.Next(0, SeaWidth);
                             End.Y = SeaHeight;
-                            break;
+                            break;234234
                         case 3:
                             End.X = 0;
                             End.Y = rnd.Next(0, SeaHeight);

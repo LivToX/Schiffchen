@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 
 namespace Schiffchen6
 {
-    public class Vector
+    public class VectorC
     {
         public Point Start = new Point();
-        public Point End = new Point();      
-        
+        public Point End = new Point();
+        Vector vector = new Vector();
         Line line;
-        public Vector(Canvas Sea)
+        public VectorC(Canvas Sea)
         {
             pickASite(Sea);
-
+            GetLength(Start, End);
 
             line = new Line
             {
@@ -37,9 +37,6 @@ namespace Schiffchen6
                 X2 = End.X,
                 Y2 = End.Y
             };
-
-
-
             Sea.Children.Add(line);
         }
 
@@ -136,26 +133,19 @@ namespace Schiffchen6
                             break;
                     }
                     break;
-
+                    
 
             }
 
-
-
-
             return (Start.X, End.X, Start.Y, End.Y);
         }
-        double GetLength(Point Start, Point End)
+        void GetStepSize(Point Start, Point End)
         {
-            System.Windows.Vector Vec123 = new System.Windows.Vector();
+            Vector Vec123 = new Vector();
             Vec123.X = End.X - Start.X;
             Vec123.Y = End.Y - Start.Y;
-
-            return Vec123.Length;
+            
+            vector = Vec123 / 5;
         }
-
-
-
-
     }
 }

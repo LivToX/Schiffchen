@@ -26,7 +26,7 @@ namespace Schiffchen6
         
         public Ship(Canvas Sea)
         {
-            Vector vector = new Vector(Sea);
+            VectorC vector = new VectorC(Sea);
             rect = new Rectangle
             {
                 Fill = Brushes.Red,
@@ -38,7 +38,7 @@ namespace Schiffchen6
             Sea.Children.Add(rect);
         }
 
-
+        
        
     }
 }

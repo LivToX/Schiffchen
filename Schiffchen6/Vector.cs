@@ -24,7 +24,7 @@ namespace Schiffchen6
         public VectorC(Canvas Sea)
         {
             pickASite(Sea);
-            GetLength(Start, End);
+            GetStepSize(Start, End);
 
             line = new Line
             {

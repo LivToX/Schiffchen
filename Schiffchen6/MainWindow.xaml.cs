@@ -39,7 +39,7 @@ namespace Schiffchen6
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            SchiffController.moveShips(Sea);
         }
     }
 } 

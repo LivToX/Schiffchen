@@ -13,12 +13,15 @@ namespace Schiffchen6
     public class SchiffController
     {
         
-        public void moveShips(Canvas Sea)
+        public static void moveShips(Canvas Sea)
         {
-            //foreach(Ship ship in new List<Ship>(Ships))
-            //{
-
-            //}
+            foreach (Ship ship in new List<Ship>(MainWindow.Ships))
+            {
+                ship.x = Canvas.GetLeft(ship.rect);
+                ship.y = Canvas.GetTop(ship.rect);
+                Canvas.SetLeft(ship.rect, ship.x + ship.stepX);
+                Canvas.SetTop(ship.rect, ship.y + ship.stepY);
+            }
         }
 
         void killShips()

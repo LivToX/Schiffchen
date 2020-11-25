@@ -16,15 +16,15 @@ namespace Schiffchen6.Models
         int _serial { get; set; }
 
 
-        double x;
-        double y;
-        double stepX;
-        double stepY;
+        public double x;
+        public double y;
+        public double stepX;
+        public double stepY; 
 
         // double speed;
         //double direction;
 
-        Rectangle rect;
+        public Rectangle rect;
         
         public Ship(Canvas Sea , int serial )
         {

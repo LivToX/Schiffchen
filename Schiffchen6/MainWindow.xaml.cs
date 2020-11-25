@@ -20,7 +20,7 @@ namespace Schiffchen6
     /// </summary>
     public partial class MainWindow : Window
     {
-        Modell Aye = new Modell();
+        Model Aye = new Model();
         public MainWindow()
         {
             InitializeComponent();

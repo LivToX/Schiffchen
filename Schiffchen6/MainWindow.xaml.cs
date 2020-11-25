@@ -21,7 +21,8 @@ namespace Schiffchen6
     /// </summary>
     public partial class MainWindow : Window
     {
-        SchiffController Aye = new SchiffController();
+        public static List<Ship> Ships = new List<Ship>();
+        public static int serial = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,13 +32,14 @@ namespace Schiffchen6
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             
-            Ship ship = new Ship(Sea);
+            Ship ship = new Ship(Sea, serial++);
+            Ships.Add(ship);
             
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Aye.moveShips(Sea);
+            
         }
     }
 } 

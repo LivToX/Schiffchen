@@ -15,7 +15,10 @@ namespace Schiffchen6
         
         public void moveShips(Canvas Sea)
         {
-            
+            //foreach(Ship ship in new List<Ship>(Ships))
+            //{
+
+            //}
         }
 
         void killShips()

@@ -22,14 +22,14 @@ namespace Schiffchen6.Models
         Vector StepVector = new Vector();
         Line line;
 
-        int serial;
+        int _serial;
 
         public double stepSizeX { get; set; }
         
         public double stepSizeY { get; set; }
-        public VectorC(Canvas Sea,int _serial)
+        public VectorC(Canvas Sea,int serial)
         {
-            serial = _serial;
+            _serial = serial;
             pickASite(Sea);
             GetStepSize(Start, End);
 

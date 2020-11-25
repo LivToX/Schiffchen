@@ -11,24 +11,31 @@ using System.Windows.Shapes;
 
 namespace Schiffchen6.Models
 {
-    class Ship
+    public class Ship
     {
-        int serial { get; set; }
+        int _serial { get; set; }
 
 
         double x;
         double y;
+        double stepX;
+        double stepY;
 
         // double speed;
         //double direction;
 
         Rectangle rect;
         
-        public Ship(Canvas Sea , int _serial )
+        public Ship(Canvas Sea , int serial )
         {
-            serial = _serial;
-            VectorC vectorC = new VectorC(Sea,serial);
+            _serial = serial;
             
+            VectorC vectorC = new VectorC(Sea,serial);
+            x = vectorC.Start.X;
+            y = vectorC.Start.Y;
+            stepX = vectorC.stepSizeX;
+            stepY = vectorC.stepSizeY;
+
             rect = new Rectangle
             {
                 Fill = Brushes.Red,

@@ -13,7 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Schiffchen6
+namespace Schiffchen6.Models
 {
     public class VectorC
     {
@@ -22,12 +22,14 @@ namespace Schiffchen6
         Vector StepVector = new Vector();
         Line line;
 
+        int serial;
 
-        public double Testx { get; set; }
+        public double stepSizeX { get; set; }
         
-        public double Testy { get; set; }
-        public VectorC(Canvas Sea)
+        public double stepSizeY { get; set; }
+        public VectorC(Canvas Sea,int _serial)
         {
+            serial = _serial;
             pickASite(Sea);
             GetStepSize(Start, End);
 
@@ -46,7 +48,7 @@ namespace Schiffchen6
            
         }
 
-        public (double, double, double, double) pickASite(Canvas Sea)
+        private (double, double, double, double) pickASite(Canvas Sea)
         {
             int SeaHeight = Convert.ToInt32(Sea.Height);
             int SeaWidth = Convert.ToInt32(Sea.Width);
@@ -139,22 +141,22 @@ namespace Schiffchen6
                             break;
                     }
                     break;
-                    
+
 
             }
 
             return (Start.X, End.X, Start.Y, End.Y);
         }
-        (double, double) GetStepSize(Point Start, Point End)
+        private (double, double) GetStepSize(Point Start, Point End)
         {
             Vector Vec123 = new Vector();
             Vec123.X = End.X - Start.X;
             Vec123.Y = End.Y - Start.Y;
             
             StepVector = Vec123 / 5;
-            Testx = StepVector.X;
-            Testy = StepVector.Y;
-            return (Testx, Testy);
+            stepSizeX = StepVector.X;
+            stepSizeY = StepVector.Y;
+            return (stepSizeX, stepSizeY);
         }
     }
 }

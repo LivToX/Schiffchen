@@ -55,9 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model.cs" />
-    <Compile Include="Vector.cs" />
-    <Compile Include="Ship.cs" />
+    <Compile Include="SchiffController.cs" />
+    <Compile Include="Models\Vector.cs" />
+    <Compile Include="Models\Ship.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

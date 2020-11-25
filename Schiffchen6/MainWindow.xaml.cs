@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Schiffchen6.Models;
 
 namespace Schiffchen6
 {
@@ -20,7 +21,7 @@ namespace Schiffchen6
     /// </summary>
     public partial class MainWindow : Window
     {
-        Model Aye = new Model();
+        SchiffController Aye = new SchiffController();
         public MainWindow()
         {
             InitializeComponent();

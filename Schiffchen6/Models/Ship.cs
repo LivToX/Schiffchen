@@ -9,11 +9,11 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace Schiffchen6
+namespace Schiffchen6.Models
 {
     class Ship
     {
-        int _serial { get; set; }
+        int serial { get; set; }
 
 
         double x;
@@ -24,9 +24,10 @@ namespace Schiffchen6
 
         Rectangle rect;
         
-        public Ship(Canvas Sea )
+        public Ship(Canvas Sea , int _serial )
         {
-            VectorC vectorC = new VectorC(Sea);
+            serial = _serial;
+            VectorC vectorC = new VectorC(Sea,serial);
             
             rect = new Rectangle
             {
@@ -37,15 +38,6 @@ namespace Schiffchen6
             Canvas.SetLeft(rect, vectorC.Start.X);
             Canvas.SetTop(rect, vectorC.Start.Y);
             Sea.Children.Add(rect);
-        }
-
-        public void moveShip(Canvas Sea, double Testx,double Testy)
-        {
-            x = Canvas.GetLeft(rect);
-            y = Canvas.GetTop(rect);
-            Canvas.SetLeft(rect, x + Testx);
-            Canvas.SetTop(rect, y + Testy);
-
         }
 
 

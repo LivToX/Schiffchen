@@ -5,19 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Schiffchen6.Models;
 
 namespace Schiffchen6
 {
     
-    public class Model
+    public class SchiffController
     {
         
         public void moveShips(Canvas Sea)
         {
-            VectorC Testv = new VectorC(Sea);
-            Ship ship = new Ship(Sea);
-            ship.moveShip(Sea, Testv.Testx, Testv.Testy);
-
+            
         }
 
         void killShips()

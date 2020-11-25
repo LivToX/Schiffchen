@@ -21,15 +21,17 @@ namespace Schiffchen6.Models
         public Point End = new Point();
         Vector StepVector = new Vector();
         Line line;
-
+        int _divisor;
         int _serial;
 
         public double stepSizeX { get; set; }
         
         public double stepSizeY { get; set; }
-        public VectorC(Canvas Sea,int serial)
+        public VectorC(Canvas Sea,int serial,int divisor)
         {
             _serial = serial;
+
+            _divisor = divisor;
             pickASite(Sea);
             GetStepSize(Start, End);
 
@@ -153,7 +155,7 @@ namespace Schiffchen6.Models
             Vec123.X = End.X - Start.X;
             Vec123.Y = End.Y - Start.Y;
             
-            StepVector = Vec123 / 5;
+            StepVector = Vec123 / _divisor;
             stepSizeX = StepVector.X;
             stepSizeY = StepVector.Y;
             return (stepSizeX, stepSizeY);

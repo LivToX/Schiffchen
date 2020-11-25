@@ -15,7 +15,7 @@ namespace Schiffchen6.Models
     {
         int _serial { get; set; }
 
-
+        int divisor;
         public double x;
         public double y;
         public double stepX;
@@ -25,12 +25,14 @@ namespace Schiffchen6.Models
         //double direction;
 
         public Rectangle rect;
-        
+        Random rnd = new Random();
         public Ship(Canvas Sea , int serial )
         {
             _serial = serial;
-            
-            VectorC vectorC = new VectorC(Sea,serial);
+
+            divisor = rnd.Next(100, 500);
+            VectorC vectorC = new VectorC(Sea,serial,divisor);
+
             x = vectorC.Start.X;
             y = vectorC.Start.Y;
             stepX = vectorC.stepSizeX;

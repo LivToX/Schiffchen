@@ -10,7 +10,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Canvas Name="Sea" Margin="30" Width="430" Height="360" Background="#FF004676"/>
+        <Canvas Name="Sea" Margin="31,30,31,29" Width="430" Height="360" Background="#FF004676"/>
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,5,0,0" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="90,5,0,0" Click="Button_Click_1"/>
     </Grid>
 </Window>

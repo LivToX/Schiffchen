@@ -19,8 +19,13 @@ namespace Schiffchen6
     {
         public Point Start = new Point();
         public Point End = new Point();
-        Vector vector = new Vector();
+        Vector StepVector = new Vector();
         Line line;
+
+
+        public double Testx { get; set; }
+        
+        public double Testy { get; set; }
         public VectorC(Canvas Sea)
         {
             pickASite(Sea);
@@ -38,6 +43,7 @@ namespace Schiffchen6
                 Y2 = End.Y
             };
             Sea.Children.Add(line);
+           
         }
 
         public (double, double, double, double) pickASite(Canvas Sea)
@@ -139,13 +145,16 @@ namespace Schiffchen6
 
             return (Start.X, End.X, Start.Y, End.Y);
         }
-        void GetStepSize(Point Start, Point End)
+        (double, double) GetStepSize(Point Start, Point End)
         {
             Vector Vec123 = new Vector();
             Vec123.X = End.X - Start.X;
             Vec123.Y = End.Y - Start.Y;
             
-            vector = Vec123 / 5;
+            StepVector = Vec123 / 5;
+            Testx = StepVector.X;
+            Testy = StepVector.Y;
+            return (Testx, Testy);
         }
     }
 }

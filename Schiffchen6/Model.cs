@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Schiffchen6
 {
-    class Modell
+    
+    public class Model
     {
-        void moveShips()
+        
+        public void moveShips(Canvas Sea)
         {
+            VectorC Testv = new VectorC(Sea);
+            Ship ship = new Ship(Sea);
+            ship.moveShip(Sea, Testv.Testx, Testv.Testy);
 
         }
 

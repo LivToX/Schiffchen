@@ -20,6 +20,7 @@ namespace Schiffchen6
     /// </summary>
     public partial class MainWindow : Window
     {
+        Modell Aye = new Modell();
         public MainWindow()
         {
             InitializeComponent();
@@ -28,7 +29,14 @@ namespace Schiffchen6
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             Ship ship = new Ship(Sea);
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Aye.moveShips(Sea);
         }
     }
 } 

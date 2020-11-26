@@ -40,23 +40,21 @@ namespace Schiffchen6
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            SchiffController.moveShips(Sea);
-            //moving = true;
-            //Tick();
-            //if (moving)
-            //{
-            //    moving = false;
-            //}
+            //SchiffController.moveShips(Sea);            
+            if (moving)
+                moving = false;
+            else
+                moving = true;
         }
 
         private async void Tick()
         {
-            while (moving)
+            if(moving)
             {
                 SchiffController.moveShips(Sea);
             }
-
-
+            await Task.Delay(10);
+            Tick();
 
         }
     }

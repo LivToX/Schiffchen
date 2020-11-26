@@ -23,23 +23,41 @@ namespace Schiffchen6
     {
         public static List<Ship> Ships = new List<Ship>();
         public static int serial = 0;
+        bool moving = false;
         public MainWindow()
         {
             InitializeComponent();
-            
+            Tick();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             Ship ship = new Ship(Sea, serial++);
             Ships.Add(ship);
-            
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             SchiffController.moveShips(Sea);
+            //moving = true;
+            //Tick();
+            //if (moving)
+            //{
+            //    moving = false;
+            //}
+        }
+
+        private async void Tick()
+        {
+            while (moving)
+            {
+                SchiffController.moveShips(Sea);
+            }
+
+
+
         }
     }
-} 
+}

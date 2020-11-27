@@ -48,7 +48,7 @@ namespace Schiffchen6.Models
             pickASite(Sea);
             GetStepSize(Start, End);
 
-            Sea.Children.Add(line);
+            //Sea.Children.Add(line);
 
         }
 
@@ -62,34 +62,34 @@ namespace Schiffchen6.Models
             Site Startsite = (Site)start;
             Site Finishsite = (Site)finish;
 
-            switch (Startsite)              //Anfang vom Vektor
-            {                                                                                           // immer im Uhrzeigersinn
+            switch (Startsite)              
+            {                                                                                           
                 case Site.Oben:
                     Start = new Point(rnd.Next(0, SeaWidth - 10), Start.Y);
                     break;
-                case Site.Rechts:                                             //right
+                case Site.Rechts:                                             
                     Start = new Point(SeaWidth - 10, rnd.Next(0, SeaHeight - 10));
                     break;
-                case Site.Unten:                                              //bottom
+                case Site.Unten:                                              
                     Start = new Point(rnd.Next(0, SeaWidth - 10), SeaHeight -10 );
                     break;
-                case Site.Links:                                             //Left
+                case Site.Links:                                            
                     Start = new Point(Start.X, rnd.Next(0, SeaHeight -10));
                     break;
             }
 
-            switch (Finishsite)     //Ende        
+            switch (Finishsite)       
             {
                 case Site.Oben:
                     End = new Point(rnd.Next(0, SeaWidth), End.Y);
                     break;
-                case Site.Rechts:                                             //right
+                case Site.Rechts:                                             
                     End = new Point(SeaWidth, rnd.Next(0, SeaHeight));
                     break;
-                case Site.Unten:                                              //bottom
+                case Site.Unten:                                              
                     End = new Point(rnd.Next(0, SeaWidth), SeaHeight);
                     break;
-                case Site.Links:                                             //Left
+                case Site.Links:
                     End = new Point(End.X, rnd.Next(0, SeaHeight));
                     break;
             }

@@ -24,6 +24,7 @@ namespace Schiffchen6
         public static List<Ship> Ships = new List<Ship>();
         public static int serial = 0;
         bool moving = false;
+        public static bool linesOn = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -49,13 +50,21 @@ namespace Schiffchen6
 
         private async void Tick()
         {
-            if(moving)
+            if (moving)
             {
                 SchiffController.moveShips(Sea);
             }
             await Task.Delay(10);
             Tick();
 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (linesOn)
+                linesOn = false;
+            else
+                linesOn = true;
         }
     }
 }

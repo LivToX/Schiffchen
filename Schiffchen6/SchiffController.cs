@@ -10,7 +10,7 @@ using Schiffchen6.Models;
 
 namespace Schiffchen6
 {
-    
+
     public class SchiffController
     {
         public static void moveShips(Canvas Sea)
@@ -18,14 +18,17 @@ namespace Schiffchen6
             foreach (Ship ship in new List<Ship>(MainWindow.Ships))
             {
                 ship.vector.Start = new Point(Canvas.GetLeft(ship.rect), Canvas.GetTop(ship.rect));
-
+                ship.exists++;
                 Canvas.SetLeft(ship.rect, ship.vector.Start.X + ship.vector.stepSizeX);
                 Canvas.SetTop(ship.rect, ship.vector.Start.Y + ship.vector.stepSizeY);
-                if(ship.vector.Start.X +10 >= Sea.Width  || ship.vector.Start.Y + 10 >= Sea.Height || ship.vector.Start.X <0 || ship.vector.Start.Y < 0)
+                if (ship.exists > 5 && (ship.vector.Start.X >= Sea.Width - 10 || ship.vector.Start.Y >= Sea.Height - 10 || ship.vector.Start.X < 0 || ship.vector.Start.Y < 0))
                 {
                     killShip(Sea, ship);
                 }
-
+                if (MainWindow.linesOn)
+                {
+                    showPath(Sea, ship);
+                }
             }
         }
 
@@ -38,6 +41,16 @@ namespace Schiffchen6
             Sea.Children.Remove(ship.vector.line);
         }
 
+        public static void showPath(Canvas Sea, Ship ship)
+        {
+            
+                Sea.Children.Add(ship.vector.line);
+            MainWindow.linesOn = false;
+            
+            
+               // Sea.Children.Remove(ship.vector.line);
+            
+        }
         void collisionCheck()
         {
 

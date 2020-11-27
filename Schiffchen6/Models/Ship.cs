@@ -14,17 +14,10 @@ namespace Schiffchen6.Models
     public class Ship
     {
         public int _serial { get; set; }
-
+        public int exists = 0; 
         int divisor;
-        //public double x;
-        //public double y;
-        //public double stepX;
-        //public double stepY;
-        //public double xEnd;
+       
         public VectorC vector { get; set; }
-
-        // double speed;
-        //double direction;
 
         public Rectangle rect;
         Random rnd = new Random();
@@ -36,11 +29,7 @@ namespace Schiffchen6.Models
             VectorC vectorC = new VectorC(Sea,serial,divisor);
             vector = vectorC;
 
-            //x = vectorC.Start.X;
-            //y = vectorC.Start.Y;
-            //stepX = vectorC.stepSizeX;
-            //stepY = vectorC.stepSizeY;
-            //xEnd = vectorC.End.X;
+            
 
             rect = new Rectangle
             {

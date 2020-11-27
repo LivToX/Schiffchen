@@ -13,13 +13,15 @@ namespace Schiffchen6.Models
 {
     public class Ship
     {
-        int _serial { get; set; }
+        public int _serial { get; set; }
 
         int divisor;
-        public double x;
-        public double y;
-        public double stepX;
-        public double stepY; 
+        //public double x;
+        //public double y;
+        //public double stepX;
+        //public double stepY;
+        //public double xEnd;
+        public VectorC vector { get; set; }
 
         // double speed;
         //double direction;
@@ -32,11 +34,13 @@ namespace Schiffchen6.Models
 
             divisor = rnd.Next(100, 500);
             VectorC vectorC = new VectorC(Sea,serial,divisor);
+            vector = vectorC;
 
-            x = vectorC.Start.X;
-            y = vectorC.Start.Y;
-            stepX = vectorC.stepSizeX;
-            stepY = vectorC.stepSizeY;
+            //x = vectorC.Start.X;
+            //y = vectorC.Start.Y;
+            //stepX = vectorC.stepSizeX;
+            //stepY = vectorC.stepSizeY;
+            //xEnd = vectorC.End.X;
 
             rect = new Rectangle
             {

@@ -21,7 +21,7 @@ namespace Schiffchen6
 
                 Canvas.SetLeft(ship.rect, ship.vector.Start.X + ship.vector.stepSizeX);
                 Canvas.SetTop(ship.rect, ship.vector.Start.Y + ship.vector.stepSizeY);
-                if(ship.vector.Start.X == ship.vector.End.X)
+                if(ship.vector.Start.X >= ship.vector.End.X)
                 {
                     killShip(Sea, ship);
                 }

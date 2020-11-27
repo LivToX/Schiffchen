@@ -24,10 +24,11 @@ namespace Schiffchen6.Models
         Point _End { get; set; } = new Point();
 
         Vector StepVector = new Vector();
-        Line line;
+        public Line line;
         int _divisor;
         int _serial;
 
+        
         public double stepSizeX { get; set; }
 
         public double stepSizeY { get; set; }
@@ -64,16 +65,16 @@ namespace Schiffchen6.Models
             switch (Startsite)              //Anfang vom Vektor
             {                                                                                           // immer im Uhrzeigersinn
                 case Site.Oben:
-                    Start = new Point(rnd.Next(0, SeaWidth), Start.Y);
+                    Start = new Point(rnd.Next(0, SeaWidth - 10), Start.Y);
                     break;
                 case Site.Rechts:                                             //right
-                    Start = new Point(SeaWidth, rnd.Next(0, SeaHeight));
+                    Start = new Point(SeaWidth - 10, rnd.Next(0, SeaHeight - 10));
                     break;
                 case Site.Unten:                                              //bottom
-                    Start = new Point(rnd.Next(0, SeaWidth), SeaHeight);
+                    Start = new Point(rnd.Next(0, SeaWidth - 10), SeaHeight -10 );
                     break;
                 case Site.Links:                                             //Left
-                    Start = new Point(Start.X, rnd.Next(0, SeaHeight));
+                    Start = new Point(Start.X, rnd.Next(0, SeaHeight -10));
                     break;
             }
 

@@ -21,7 +21,7 @@ namespace Schiffchen6
 
                 Canvas.SetLeft(ship.rect, ship.vector.Start.X + ship.vector.stepSizeX);
                 Canvas.SetTop(ship.rect, ship.vector.Start.Y + ship.vector.stepSizeY);
-                if(ship.vector.Start.X >= ship.vector.End.X)
+                if(ship.vector.Start.X +10 >= Sea.Width  || ship.vector.Start.Y + 10 >= Sea.Height || ship.vector.Start.X <0 || ship.vector.Start.Y < 0)
                 {
                     killShip(Sea, ship);
                 }
@@ -35,6 +35,7 @@ namespace Schiffchen6
             int idx = MainWindow.Ships.FindIndex(x => x._serial == ship._serial);
             if (idx != -1)
                 MainWindow.Ships.RemoveAt(idx);
+            Sea.Children.Remove(ship.vector.line);
         }
 
         void collisionCheck()

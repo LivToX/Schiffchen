@@ -25,10 +25,6 @@ namespace Schiffchen6
                 {
                     killShip(Sea, ship);
                 }
-                if (MainWindow.linesOn)
-                {
-                    showPath(Sea, ship);
-                }
             }
         }
 
@@ -41,15 +37,29 @@ namespace Schiffchen6
             Sea.Children.Remove(ship.vector.line);
         }
 
-        public static void showPath(Canvas Sea, Ship ship)
+        public static void showPath(Canvas Sea)
         {
-            
-                Sea.Children.Add(ship.vector.line);
-            MainWindow.linesOn = false;
-            
-            
-               // Sea.Children.Remove(ship.vector.line);
-            
+            if (!MainWindow.linesOn)
+            {
+                foreach (Ship ship in new List<Ship>(MainWindow.Ships))
+                {
+                    Sea.Children.Add(ship.vector.line);
+                    Sea.Children.Remove(ship.rect);
+                    Sea.Children.Add(ship.rect);
+
+                }
+                MainWindow.linesOn = true;
+            }
+            else
+            {
+                foreach (Ship ship in new List<Ship>(MainWindow.Ships))
+                {
+                    Sea.Children.Remove(ship.vector.line);
+                }
+                MainWindow.linesOn = false;
+            }
+
+
         }
         void collisionCheck()
         {

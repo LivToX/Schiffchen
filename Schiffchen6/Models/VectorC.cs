@@ -47,8 +47,8 @@ namespace Schiffchen6.Models
             Start = new Point(0, 0);
             pickASite(Sea);
             GetStepSize(Start, End);
-
-            //Sea.Children.Add(line);
+            if(MainWindow.linesOn)
+            Sea.Children.Add(line);
 
         }
 

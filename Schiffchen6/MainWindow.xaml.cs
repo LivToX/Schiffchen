@@ -59,12 +59,11 @@ namespace Schiffchen6
 
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        
+
+        private void btnshowPath_Click(object sender, RoutedEventArgs e)
         {
-            if (linesOn)
-                linesOn = false;
-            else
-                linesOn = true;
+            SchiffController.showPath(Sea);
         }
     }
 }

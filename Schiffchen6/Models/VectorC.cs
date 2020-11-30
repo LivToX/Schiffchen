@@ -106,7 +106,7 @@ namespace Schiffchen6.Models
         }
 
         private (double, double) GetStepSize(Point Start, Point End)
-        {
+        {//TESTSTSTSTSTST
             Vector Vec123 = new Vector();
             Vec123.X = End.X - Start.X;
             Vec123.Y = End.Y - Start.Y;

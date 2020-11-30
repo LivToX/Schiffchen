@@ -36,7 +36,7 @@ namespace Schiffchen6
                 MainWindow.Ships.RemoveAt(idx);
             Sea.Children.Remove(ship.vector.line);
             MainWindow.shipCount--;
-            
+
         }
 
         public static void showPath(Canvas Sea)
@@ -63,10 +63,16 @@ namespace Schiffchen6
 
 
         }
-        void collisionCheck()
-        {
-
-        }
+        //public static void collisionCheck(Canvas Sea)
+        //{
+        //    foreach (Ship ship in new List<Ship>(MainWindow.Ships.Where(x => x._serial != x._serial)))
+        //    {
+        //        foreach (Ship ship in new List<Ship>(MainWindow.Ships.Where(x => x._serial != x._serial)))
+        //        {
+        //            double distance = Point.Subtract(ship.vector.Start, ship.vector.Start).Length;
+        //        }
+        //    }
+        //}
 
         public static void createship(Canvas Sea)
         {

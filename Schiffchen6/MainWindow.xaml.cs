@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,23 +26,26 @@ namespace Schiffchen6
         public static int serial = 0;
         bool moving = false;
         public static bool linesOn = false;
+        public static int shipCount = 0;
         public MainWindow()
         {
             InitializeComponent();
             Tick();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddShip_Click(object sender, RoutedEventArgs e)
         {
 
-            Ship ship = new Ship(Sea, serial++);
-            Ships.Add(ship);
+            SchiffController.createship(Sea);
+            if (shipCount > 19)
+            {
+                AddShip.IsEnabled = false;
+            }
 
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //SchiffController.moveShips(Sea);            
             if (moving)
                 moving = false;
             else
@@ -50,16 +54,26 @@ namespace Schiffchen6
 
         private async void Tick()
         {
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            if (shipCount < 20)
+            {
+                AddShip.IsEnabled = true;
+            }
+            lblShipCount.Content = shipCount;
+
             if (moving)
             {
                 SchiffController.moveShips(Sea);
             }
-            await Task.Delay(10);
-            Tick();
+            watch.Stop();
+            
+            await Task.Delay(1000);
 
+            Tick();
         }
 
-        
+
 
         private void btnshowPath_Click(object sender, RoutedEventArgs e)
         {

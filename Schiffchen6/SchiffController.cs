@@ -35,6 +35,8 @@ namespace Schiffchen6
             if (idx != -1)
                 MainWindow.Ships.RemoveAt(idx);
             Sea.Children.Remove(ship.vector.line);
+            MainWindow.shipCount--;
+            
         }
 
         public static void showPath(Canvas Sea)
@@ -66,9 +68,10 @@ namespace Schiffchen6
 
         }
 
-        void createship()
+        public static void createship(Canvas Sea)
         {
-
+            Ship ship = new Ship(Sea, MainWindow.serial++);
+            MainWindow.Ships.Add(ship);
         }
     }
 }

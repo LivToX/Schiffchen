@@ -25,11 +25,11 @@ namespace Schiffchen6.Models
         {
             _serial = serial;
 
-            divisor = rnd.Next(100, 500);
+            divisor = rnd.Next(155, 200);
             VectorC vectorC = new VectorC(Sea,serial,divisor);
             vector = vectorC;
 
-            
+            MainWindow.shipCount++;
 
             rect = new Rectangle
             {

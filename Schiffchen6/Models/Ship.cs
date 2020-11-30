@@ -29,7 +29,7 @@ namespace Schiffchen6.Models
             VectorC vectorC = new VectorC(Sea,serial,divisor);
             vector = vectorC;
 
-            MainWindow.shipCount++;
+            
 
             rect = new Rectangle
             {

@@ -27,6 +27,7 @@ namespace Schiffchen6
         bool moving = false;
         public static bool linesOn = false;
         public static int shipCount = 0;
+        int ticks = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -36,14 +37,12 @@ namespace Schiffchen6
 
         private void AddShip_Click(object sender, RoutedEventArgs e)
         {
-
             SchiffController.createship(Sea);
             lblShipCount.Content = shipCount;
             if (shipCount > 19)
             {
                 AddShip.IsEnabled = false;
             }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -62,14 +61,23 @@ namespace Schiffchen6
             if (shipCount < 20)
             {
                 AddShip.IsEnabled = true;
-            }          
+            }       
+            
             if (moving)
             {
                 SchiffController.moveShips(Sea);
             }
+
+            if (ticks >= 2 && shipCount < 20)
+            {
+                ticks = 0;
+                                
+                SchiffController.createship(Sea);
+                lblShipCount.Content = shipCount;
+            }
+            ticks++;
             watch.Stop();
-            
-            await Task.Delay(1000);
+            await Task.Delay(100);
 
             Tick();
         }

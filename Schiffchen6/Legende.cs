@@ -12,15 +12,14 @@ namespace Schiffchen6
     class Legende
     {
         Line line;
-
         public Legende(Canvas Sea)
         {
 
             line = new Line {
                 X1 =  10,
-                Y1 = Sea.Height +10,
+                Y1 = Sea.Height +50,
                 X2 =  110,
-                Y2 = Sea.Height+ 10,
+                Y2 = Sea.Height+ 50,
 
                 Fill = Brushes.Black,
                 Stroke = Brushes.Black,
@@ -28,9 +27,5 @@ namespace Schiffchen6
             };
             Sea.Children.Add(line);
         }
-
-
-
-
     }
 }

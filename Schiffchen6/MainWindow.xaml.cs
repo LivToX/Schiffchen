@@ -30,6 +30,7 @@ namespace Schiffchen6
         public MainWindow()
         {
             InitializeComponent();
+            Legende legende = new Legende(Sea);
             Tick();
         }
 

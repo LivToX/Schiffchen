@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Schiffchen6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="500" Background="#FFA6A6A6">
+        Title="MainWindow" Height="530" Width="500" Background="#FFA6A6A6">
     <Grid>
-        <Canvas Name="Sea" Margin="30" Width="430" Height="360" Background="#FF004676"/>
+        <Canvas Name="Sea" Margin="30,30,30,100" Width="430" Height="360" Background="#FF004676"/>
         <Button x:Name="AddShip" Content="Add ship" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,5,0,0" Click="AddShip_Click" IsCancel="True"/>
         <Button Content="Toggle move ships" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118" Margin="90,5,0,0" Click="Button_Click_1"/>
         <Button x:Name="btnshowPath" Content="Show paths" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="213,5,0,0" Click="btnshowPath_Click"/>

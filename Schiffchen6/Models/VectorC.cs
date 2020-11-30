@@ -17,7 +17,7 @@ namespace Schiffchen6.Models
 {
     public class VectorC
     {
-        public Point Start { get { return _Start; } set { _Start = value; line.X1 = value.X; line.Y1 = value.Y; } }
+        public Point Start { get { return _Start; } set { _Start = value; line.X1 = value.X+5; line.Y1 = value.Y+5; } }
         Point _Start { get; set; } = new Point();
 
         public Point End { get { return _End; } set { _End = value; line.X2 = value.X; line.Y2 = value.Y; } }

@@ -33,7 +33,7 @@ namespace Schiffchen6.Models
 
             rect = new Rectangle
             {
-                Fill = Brushes.Red,
+                Fill = Brushes.Yellow,
                 Width = 10,
                 Height = 10
             };

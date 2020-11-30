@@ -38,6 +38,7 @@ namespace Schiffchen6
         {
 
             SchiffController.createship(Sea);
+            lblShipCount.Content = shipCount;
             if (shipCount > 19)
             {
                 AddShip.IsEnabled = false;
@@ -55,14 +56,13 @@ namespace Schiffchen6
 
         private async void Tick()
         {
+            lblShipCount.Content = shipCount;
             Stopwatch watch = new Stopwatch();
             watch.Start();
             if (shipCount < 20)
             {
                 AddShip.IsEnabled = true;
-            }
-            lblShipCount.Content = shipCount;
-
+            }          
             if (moving)
             {
                 SchiffController.moveShips(Sea);

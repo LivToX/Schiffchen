@@ -72,6 +72,7 @@ namespace Schiffchen6
         {
             Ship ship = new Ship(Sea, MainWindow.serial++);
             MainWindow.Ships.Add(ship);
+
         }
     }
 }

@@ -55,9 +55,10 @@ namespace Schiffchen6
 
         private async void Tick()
         {
-            lblShipCount.Content = shipCount;
             Stopwatch watch = new Stopwatch();
             watch.Start();
+            lblShipCount.Content = shipCount;
+           
             if (shipCount < 20)
             {
                 AddShip.IsEnabled = true;

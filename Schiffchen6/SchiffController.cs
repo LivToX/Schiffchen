@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Shapes;
 using Schiffchen6.Models;
 
@@ -21,6 +22,7 @@ namespace Schiffchen6
                 ship.exists++;
                 Canvas.SetLeft(ship.rect, ship.vector.Start.X + ship.vector.stepSizeX);
                 Canvas.SetTop(ship.rect, ship.vector.Start.Y + ship.vector.stepSizeY);
+                ship.collisionCheck(Sea);
                 if (ship.exists > 5 && (ship.vector.Start.X >= Sea.Width - 10 || ship.vector.Start.Y >= Sea.Height - 10 || ship.vector.Start.X < 0 || ship.vector.Start.Y < 0))
                 {
                     killShip(Sea, ship);
@@ -63,13 +65,23 @@ namespace Schiffchen6
 
 
         }
-        //public static void collisionCheck(Canvas Sea)
+        //public static void collisionCheck(Canvas Sea, Ship ship1)
         //{
+        //    Point p = ship1.vector.Start;
+
         //    foreach (Ship ship in new List<Ship>(MainWindow.Ships.Where(x => x._serial != x._serial)))
         //    {
-        //        foreach (Ship ship in new List<Ship>(MainWindow.Ships.Where(x => x._serial != x._serial)))
+
+
+        //        Point p1 = ship.vector.Start;
+        //        double distance = Point.Subtract(p, p1).Length;
+        //        if (distance <= 10)
         //        {
-        //            double distance = Point.Subtract(ship.vector.Start, ship.vector.Start).Length;
+        //            int idx = MainWindow.Ships.FindIndex(x => x._serial == ship._serial);
+        //            if (idx != -1)
+        //            {
+        //                ship.rect.Fill = Brushes.Red;
+        //            } 
         //        }
         //    }
         //}

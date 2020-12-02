@@ -18,11 +18,12 @@ namespace Schiffchen6
         {
             foreach (Ship ship in new List<Ship>(MainWindow.Ships))
             {
+                ship.collisionCheck(Sea);
                 ship.vector.Start = new Point(Canvas.GetLeft(ship.rect), Canvas.GetTop(ship.rect));
                 ship.exists++;
                 Canvas.SetLeft(ship.rect, ship.vector.Start.X + ship.vector.stepSizeX);
                 Canvas.SetTop(ship.rect, ship.vector.Start.Y + ship.vector.stepSizeY);
-                ship.collisionCheck(Sea);
+                
                 if (ship.exists > 5 && (ship.vector.Start.X >= Sea.Width - 10 || ship.vector.Start.Y >= Sea.Height - 10 || ship.vector.Start.X < 0 || ship.vector.Start.Y < 0))
                 {
                     killShip(Sea, ship);

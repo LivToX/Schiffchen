@@ -20,7 +20,7 @@ namespace Schiffchen6.Models
         public VectorC vector { get; set; }
 
         Ellipse ellipse;
-        bool lineAdded = false;
+        bool ellipseAdded = false;
         bool collision = false;
 
         public Rectangle rect;
@@ -57,34 +57,33 @@ namespace Schiffchen6.Models
             {
                 Point p1 = ship.vector.Start;
                 double distance = Point.Subtract(p, p1).Length;
-                if (distance <= 100 && !ship.collision)
+                if (distance <= 50 && !ship.collision && !this.collision)
                 {
-                    Canvas.SetLeft(ellipse, p.X-(ellipse.Width/2) + (rect.Width / 2));
-                    Canvas.SetTop(ellipse, p.Y - (ellipse.Height / 2) + (rect.Height / 2));
-                    //line.X1 = p.X +(rect.Width/2);
-                    //line.Y1 = p.Y + (rect.Height / 2);
-                    //line.X2 = p1.X+ (rect.Width / 2);
-                    //line.Y2 = p1.Y+ (rect.Height / 2);
-                    if (!lineAdded)
+                    Canvas.SetLeft(this.ellipse, p.X-(ellipse.Width/2) + (rect.Width / 2));
+                    Canvas.SetTop(this.ellipse, p.Y - (ellipse.Height / 2) + (rect.Height / 2));
+                    Canvas.SetLeft(ship.ellipse, p.X - (ellipse.Width / 2) + (rect.Width / 2));
+                    Canvas.SetTop(ship.ellipse, p.Y - (ellipse.Height / 2) + (rect.Height / 2));
+
+                    if (!ellipseAdded)
                     {
-                        Sea.Children.Remove(this.rect);
-                        Sea.Children.Remove(ship.rect);
+                       
                         Sea.Children.Add(ellipse);
-                        Sea.Children.Add(this.rect);
-                        Sea.Children.Add(ship.rect);
-                        lineAdded = true;
+                       
+                        ellipseAdded = true;
                     }
-                    if(lineAdded && distance >= 100)
+                    if (this.collision || ship.collision /*||lineAdded*/)
                     {
-                        Sea.Children.Remove(ellipse);
+                        Sea.Children.Remove(this.ellipse);
+                        Sea.Children.Remove(ship.ellipse);
 
                     }
                 }
 
-                if (distance <= 1)
+                if (distance <= 10)
                 {
                     this.rect.Fill = Brushes.Red;
                     ship.rect.Fill = Brushes.Red;
+                    
                     collision = true;
                 }
             }

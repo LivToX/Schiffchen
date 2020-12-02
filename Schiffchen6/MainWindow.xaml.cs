@@ -58,7 +58,7 @@ namespace Schiffchen6
             Stopwatch watch = new Stopwatch();
             watch.Start();
             lblShipCount.Content = shipCount;
-           
+            
             if (shipCount < 20)
             {
                 AddShip.IsEnabled = true;

@@ -34,6 +34,7 @@ namespace Schiffchen6
         public static void killShip(Canvas Sea, Ship ship)
         {
             Sea.Children.Remove(ship.rect);
+            Sea.Children.Remove(ship.ellipse);
             int idx = MainWindow.Ships.FindIndex(x => x._serial == ship._serial);
             if (idx != -1)
                 MainWindow.Ships.RemoveAt(idx);

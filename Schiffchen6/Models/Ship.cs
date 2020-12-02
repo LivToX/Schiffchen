@@ -19,7 +19,7 @@ namespace Schiffchen6.Models
 
         public VectorC vector { get; set; }
 
-        Ellipse ellipse;
+        public Ellipse ellipse;
         bool ellipseAdded = false;
         bool collision = false;
 
@@ -79,7 +79,7 @@ namespace Schiffchen6.Models
                     }
                 }
 
-                if (distance <= 10)
+                if (distance <= 10&&!(ship.collision||this.collision))
                 {
                     this.rect.Fill = Brushes.Red;
                     ship.rect.Fill = Brushes.Red;

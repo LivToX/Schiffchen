@@ -65,26 +65,10 @@ namespace Schiffchen6
 
 
         }
-        //public static void collisionCheck(Canvas Sea, Ship ship1)
-        //{
-        //    Point p = ship1.vector.Start;
-
-        //    foreach (Ship ship in new List<Ship>(MainWindow.Ships.Where(x => x._serial != x._serial)))
-        //    {
-
-
-        //        Point p1 = ship.vector.Start;
-        //        double distance = Point.Subtract(p, p1).Length;
-        //        if (distance <= 10)
-        //        {
-        //            int idx = MainWindow.Ships.FindIndex(x => x._serial == ship._serial);
-        //            if (idx != -1)
-        //            {
-        //                ship.rect.Fill = Brushes.Red;
-        //            } 
-        //        }
-        //    }
-        //}
+        public static void collisionCheck()
+        {
+            
+        }
 
         public static void createship(Canvas Sea)
         {

@@ -27,7 +27,7 @@ namespace Schiffchen6
         bool moving = false;
         public static bool linesOn = false;
         public static int shipCount = 0;
-        int ticks = 0;
+        double ticks = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -69,7 +69,7 @@ namespace Schiffchen6
                 SchiffController.moveShips(Sea);
             }
 
-            if (ticks >= 2 && shipCount < 20)
+            if (ticks >= 1 && shipCount < 20)
             {
                 ticks = 0;
                                 

@@ -19,6 +19,8 @@ namespace Schiffchen6.Models
 
         public VectorC vector { get; set; }
 
+        Line line;
+        bool lineAdded = false;
         bool collision = false;
 
         public Rectangle rect;
@@ -30,7 +32,12 @@ namespace Schiffchen6.Models
             divisor = rnd.Next(155, 200);
             VectorC vectorC = new VectorC(Sea, serial, divisor);
             vector = vectorC;
-
+            line = new Line
+            {
+                Fill = Brushes.Purple,
+                Stroke = Brushes.Red,
+                StrokeThickness = 1
+            };
             rect = new Rectangle
             {
                 Fill = Brushes.Yellow,
@@ -49,9 +56,17 @@ namespace Schiffchen6.Models
             {
                 Point p1 = ship.vector.Start;
                 double distance = Point.Subtract(p, p1).Length;
-                if (distance <= 10 && !ship.collision)
+                if (distance <= 100 && !ship.collision)
                 {
-                    ship.rect.Fill = Brushes.Purple;
+                    line.X1 = p.X +(rect.Width/2);
+                    line.Y1 = p.Y + (rect.Height / 2);
+                    line.X2 = p1.X+ (rect.Width / 2);
+                    line.Y2 = p1.Y+ (rect.Height / 2);
+                    if (!lineAdded)
+                    {
+                        Sea.Children.Add(line);
+                        lineAdded = true;
+                    }
                 }
 
                 if (distance <= 1)
